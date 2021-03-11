@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<p:panel>
+	<h:panelGrid columns="2">
+		<p:commandLink action="#{beanMenu.principal}">
+			<p:graphicImage url="img/logo.jpg" width="70px" height="70px"  />
+		</p:commandLink>
+		<h:panelGrid>
+			<h:outputText value="SGM - Sistema de Gestão Integrada Municipal" />
+			<h:outputText
+				value="MSC - Módulo de Serviços ao Cidadão" />
+		</h:panelGrid>
+	</h:panelGrid>
+</p:panel>
+
+</html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<ui:include src="cabecalho.xhtml" />
+	<h:form>
+	 <p:megaMenu orientation="horizontal" autoDisplay="false">
+        <p:submenu label="MIMG" icon="pi pi-check">
+            <p:column>
+                <p:submenu label="Importar">
+                    <p:menuitem value="Metadado - Agregado" url="#{beanMenu.urlMimg}/metadado/metadado.xhtml?token=#{beanMenu.retorna()}" />
+					<p:menuitem value="Resultado - Agregado" url="#{beanMenu.urlMimg}/resultado/agregado.xhtml?token=#{beanMenu.retorna()}" />
+                </p:submenu>
+            </p:column>
+        </p:submenu>
+
+        <p:submenu label="MSC" icon="pi pi-file">
+            <p:column>
+                <p:submenu label="Pesquisar">
+                    <p:menuitem value="IPTU - Cidadão" url="#{beanMenu.urlMsc}" />
+                </p:submenu>
+            </p:column>
+        </p:submenu>
+
+        <p:submenu label="Gestão de Projetos" icon="pi pi-pencil">
+            <p:column>
+                <p:submenu label="Gestão">
+                    <p:menuitem value=" " url="#"/>
+                </p:submenu>
+            </p:column>
+
+        </p:submenu>
+
+        <p:submenu label="Business Intelligence" icon="pi pi-briefcase">
+            <p:column>
+                <p:submenu label="BI">
+                    <p:menuitem value=" " url="#"/>
+                </p:submenu>
+            </p:column>
+        </p:submenu>
+
+        <p:menuitem value="Sair" actionListener="#{beanMenu.sair}" icon="pi pi-times"/>
+    </p:megaMenu>
+    </h:form>
+	<br />
+</html>

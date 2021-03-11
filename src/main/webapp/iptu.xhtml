@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Prefeitura</title>
+</h:head>
+<h:body>
+		<ui:include src="menu.xhtml" />
+	<h:form>
+		<p:growl id="growl" showDetail="true" sticky="true" />
+		<h:panelGrid columns="3">
+			<p:outputLabel for="default" value="Inscrição do imóvel:" />
+			<p:inputText id="default" value="#{beanIptu.inscricaoImovel}" required="true" maxlength="8" />
+			<p:message for="default" />
+		</h:panelGrid>
+		<br />
+		<p:panel header="Dados Gerais do Imóvel" rendered="#{beanIptu.dto ne null}">
+		<h:panelGrid columns="2">
+			<p:outputLabel value="Valor venal do imóvel:" />
+			<p:outputLabel value="#{beanIptu.dto.valorVenal}" style="color: green">
+				<f:convertNumber minFractionDigits="2" maxFractionDigits="2" />
+			</p:outputLabel>
+			
+			<p:outputLabel value="Aliquota do estado:" />
+			<p:outputLabel value="#{beanIptu.dto.aliquota}" style="color: green">
+				<f:convertNumber minFractionDigits="2" maxFractionDigits="2" />
+			</p:outputLabel>
+			
+			<p:outputLabel value="Valor total do IPTU:" />
+			<p:outputLabel value="#{beanIptu.dto.valorIptu}" style="color: green">
+				<f:convertNumber minFractionDigits="2" maxFractionDigits="2" />
+			</p:outputLabel>
+			
+			<p:outputLabel value="Valor a vista 10% de desconto:" />
+			<p:outputLabel value="#{beanIptu.dto.valorAVista}" style="color: green">
+				<f:convertNumber minFractionDigits="2" maxFractionDigits="2" />
+			</p:outputLabel>
+			
+			<p:outputLabel value="Valor da parcela 1:" />
+			<p:outputLabel value="#{beanIptu.dto.valorParcela1}" style="color: green">
+				<f:convertNumber minFractionDigits="2" maxFractionDigits="2" />
+			</p:outputLabel>
+			
+			<p:outputLabel value="Valor da parcela 2:" />
+			<p:outputLabel value="#{beanIptu.dto.valorParcela2}" style="color: green">
+				<f:convertNumber minFractionDigits="2" maxFractionDigits="2" />
+			</p:outputLabel>
+			
+			<p:outputLabel value="Valor da parcela 3:" />
+			<p:outputLabel value="#{beanIptu.dto.valorParcela3}" style="color: green">
+				<f:convertNumber minFractionDigits="2" maxFractionDigits="2" />
+			</p:outputLabel>
+			
+			<p:outputLabel value="Valor da parcela 4:" />
+			<p:outputLabel value="#{beanIptu.dto.valorParcela4}" style="color: green">
+				<f:convertNumber minFractionDigits="2" maxFractionDigits="2" />
+			</p:outputLabel>
+			
+			<p:outputLabel value="Valor da parcela 5:" />
+			<p:outputLabel value="#{beanIptu.dto.valorParcela5}" style="color: green">
+				<f:convertNumber minFractionDigits="2" maxFractionDigits="2" />
+			</p:outputLabel>
+			
+			<p:outputLabel value="Valor da parcela 6:" />
+			<p:outputLabel value="#{beanIptu.dto.valorParcela6}" style="color: green">
+				<f:convertNumber minFractionDigits="2" maxFractionDigits="2" />
+			</p:outputLabel>
+		</h:panelGrid>
+		</p:panel>
+		
+		<h:panelGrid columns="2">
+			<p:commandButton value="Pesquisar" actionListener="#{beanIptu.pesquisar}" update="@form" />
+			<p:commandButton value="Limpar" actionListener="#{beanIptu.limpar}" update="@form" />
+			<p:remoteCommand name="onload" action="#{beanIptu.limpar}" autoRun="true" />
+		</h:panelGrid>
+		
+	</h:form>
+</h:body>
+</html>
